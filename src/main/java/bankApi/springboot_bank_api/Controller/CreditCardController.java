@@ -29,7 +29,11 @@ public class CreditCardController {
       creditCardService.deleteCreditCard(Id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+@PutMapping("/{Id}")
 
+    public ResponseEntity<CreditCard>updateCreditCard(@PathVariable Long Id, @RequestBody CreditCard creditCard){
+        return new ResponseEntity<>(creditCardService.updateCreditCard(Id, creditCard), HttpStatus.ACCEPTED);
+}
 
 
 }
