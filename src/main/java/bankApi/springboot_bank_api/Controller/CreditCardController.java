@@ -33,7 +33,7 @@ public class CreditCardController {
     }
 @PutMapping("/{Id}")
 
-    public ResponseEntity<CreditCard>updateCreditCard(@PathVariable Long Id, @RequestBody CreditCard creditCard){
+    public ResponseEntity<CreditCard>updateCreditCard(@PathVariable Long Id,@Valid @RequestBody CreditCard creditCard){
         return new ResponseEntity<>(creditCardService.updateCreditCard(Id, creditCard), HttpStatus.ACCEPTED);
 }
 
